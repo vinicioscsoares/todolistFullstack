@@ -16,7 +16,7 @@ const createTask = async(task) =>{
 
     const [createdTask] = await connection.execute(queryInto, [title,'pendente',dateUTC])
 
-    return createdTask
+    return {insertId: createdTask.insertId} 
 }
 
 module.exports = {
